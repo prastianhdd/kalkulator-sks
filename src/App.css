@@ -1,18 +1,16 @@
-/* src/App.css (Versi Lengkap dengan Background Image) */
+/* src/App.css  */
 
 .app-container {
   width: 100%;
   max-width: 800px;
   padding: 2.5rem;
 
-  /* === PENGATURAN BACKGROUND IMAGE === */
-  background-image: url('/image.png'); /* Arahkan ke /image.png di folder public/ */
-  background-size: cover; /* Buat gambar menutupi area */
-  background-position: center; /* Pusatkan gambar */
-  background-repeat: no-repeat; /* Jangan ulangi gambar */
-  position: relative; /* Diperlukan untuk overlay & z-index */
-  overflow: hidden; /* Pastikan gambar tidak keluar dari border-radius */
-  
+  background-image: url('/image.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  position: relative; 
+  overflow: hidden; 
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   &::before {
@@ -22,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.4); 
     border-radius: 12px;
     z-index: 0;
 }
@@ -34,19 +32,18 @@
 
 h1 {
   text-align: center;
-  color: var(--dark-text); /* Ganti ke #ffffff jika background gelap */
+  color: var(--dark-text); 
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 2.25rem;
 }
 
-/* Form Data Semester Lalu */
 .previous-data-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 1.5rem;
-  /* Dibuat semi-transparan agar mudah dibaca di atas gambar */
+ 
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 8px;
   margin-bottom: 2rem;
@@ -78,7 +75,7 @@ h1 {
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-/* Styling untuk Label Kolom */
+
 .course-labels {
   display: grid;
   grid-template-columns: 1fr 80px 100px 50px;
@@ -90,7 +87,7 @@ h1 {
 .course-labels label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #555; /* Ganti ke #ffffff jika background gelap & tdk pakai overlay */
+  color: #555; 
 }
 
 .course-labels .label-sks,
@@ -99,7 +96,6 @@ h1 {
 }
 
 
-/* Form Mata Kuliah */
 .course-list {
   display: flex;
   flex-direction: column;
@@ -114,7 +110,7 @@ h1 {
   align-items: center;
 }
 
-/* Input dan Select tetap putih agar mudah dibaca */
+
 .course-item input,
 .course-item select {
   padding: 0.85rem;
@@ -124,7 +120,7 @@ h1 {
   width: 100%;
   box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
-  background-color: var(--card-bg); /* var(--card-bg) adalah #ffffff */
+  background-color: var(--card-bg); 
 }
 
 .course-item input:focus,
@@ -151,7 +147,7 @@ h1 {
   background-color: rgba(231, 76, 60, 0.1);
 }
 
-/* Tombol Aksi */
+
 .actions {
   margin-top: 1.5rem;
   display: flex;
@@ -188,11 +184,9 @@ h1 {
   background-color: #f0f0f0;
 }
 
-/* Hasil Kalkulasi */
 .results {
   margin-top: 2.5rem;
   padding: 2rem;
-  /* Dibuat semi-transparan agar mudah dibaca di atas gambar */
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -211,13 +205,12 @@ h1 {
   gap: 1rem;
 }
 
-/* Kartu hasil individu tetap putih */
 .result-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background-color: var(--card-bg); /* var(--card-bg) adalah #ffffff */
+  background-color: var(--card-bg); 
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
@@ -244,7 +237,6 @@ h1 {
   color: #f39c12;
 }
 
-/* === MEDIA QUERY RESPONSIVE === */
 @media (max-width: 700px) {
   .app-container {
     padding: 1.5rem;

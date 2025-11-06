@@ -1,13 +1,8 @@
-// src/App.jsx (Ganti semua isinya)
-
 import { useState, useEffect } from 'react';
 import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTrash, FaSyncAlt } from 'react-icons/fa';
 
-// --- HELPER FUNCTIONS ---
-
-// DIKEMBALIKAN: Objek bobot nilai dari Tabel 3.14
 const gradePoints = {
   'A': 4.0,
   'A-': 3.7,
@@ -21,7 +16,6 @@ const gradePoints = {
   'E': 0.0,
 };
 
-// Fungsi ini tetap sama
 const getMaxSks = (ipSemester) => {
   if (ipSemester > 3.00) return 24;
   if (ipSemester >= 2.50) return 21;
@@ -29,8 +23,6 @@ const getMaxSks = (ipSemester) => {
   if (ipSemester >= 1.5) return 15;
   return 12;
 };
-
-// --- KOMPONEN UTAMA ---
 
 function App() {
   
@@ -43,7 +35,6 @@ function App() {
     loadFromStorage('previousData', { ipk: '0', sks: '0' })
   );
 
-  // State mata kuliah diubah: 'score' kembali menjadi 'grade'
   const [courses, setCourses] = useState(
     loadFromStorage('coursesData', [
       { id: 1, name: '', sks: '3', grade: 'A' }, 
@@ -56,9 +47,7 @@ function App() {
     maxSks: 12,
   });
 
-  // --- EFEK (LOGIC) ---
 
-  // Efek ini tetap sama, menyimpan ke Local Storage
   useEffect(() => {
     localStorage.setItem('previousData', JSON.stringify(previousData));
     calculateResults();
@@ -77,7 +66,6 @@ function App() {
 
     courses.forEach((course) => {
       const sks = parseInt(course.sks, 10);
-      // DIUBAH: Gunakan objek gradePoints, bukan fungsi getGradePoint
       const point = gradePoints[course.grade]; 
 
       if (!isNaN(sks) && sks > 0 && point !== undefined) {
@@ -87,8 +75,6 @@ function App() {
     });
 
     const ipSemester = totalSksSemester === 0 ? 0 : totalPointsSemester / totalSksSemester;
-
-    // Logika kalkulasi IPK Total tetap sama
     const prevIpk = parseFloat(previousData.ipk) || 0;
     const prevSks = parseInt(previousData.sks, 10) || 0;
     const totalPointsPrev = prevIpk * prevSks;
@@ -105,13 +91,10 @@ function App() {
     });
   };
 
-  // --- HANDLER UNTUK INTERAKSI ---
 
   const handlePreviousDataChange = (field, value) => {
     setPreviousData((prev) => ({ ...prev, [field]: value }));
   };
-
-  // Diubah: State default kembali ke 'grade'
   const handleAddCourse = () => {
     const newId = courses.length > 0 ? Math.max(...courses.map(c => c.id)) + 1 : 1;
     setCourses([...courses, { id: newId, name: '', sks: '3', grade: 'A' }]);
@@ -128,21 +111,18 @@ function App() {
       )
     );
   };
-  
-  // Diubah: State default kembali ke 'grade'
+
   const handleReset = () => {
     setPreviousData({ ipk: '0', sks: '0' });
     setCourses([{ id: 1, name: '', sks: '3', grade: 'A' }]);
   };
 
-  // --- RENDER JSX ---
   
   return (
     <div className="app-container">
       <h1>Kalkulator IPK & SKS</h1>
 
       <div className="previous-data-form">
-        {/* Form IPK Lama (tidak berubah) */}
         <div className="form-group">
           <label htmlFor="prev-ipk">IPK Kumulatif (Sebelumnya)</label>
           <input
@@ -167,12 +147,10 @@ function App() {
         </div>
       </div>
 
-      {/* BARU: Label untuk kolom mata kuliah */}
       <div className="course-labels">
         <label>Mata Kuliah</label>
         <label className="label-sks">SKS</label>
         <label className="label-nilai">Nilai</label>
-        {/* Label untuk tombol hapus dibiarkan kosong */}
       </div>
 
       <div className="course-list">
@@ -231,7 +209,6 @@ function App() {
         </AnimatePresence>
       </div>
 
-      {/* Tombol Aksi (tidak berubah) */}
       <div className="actions">
         <button className="reset-btn" onClick={handleReset}>
           <FaSyncAlt style={{ marginRight: '8px' }} /> Reset
@@ -241,7 +218,6 @@ function App() {
         </button>
       </div>
 
-      {/* Tampilan Hasil (tidak berubah) */}
       <div className="results">
         <h2>Hasil Kalkulasi</h2>
         <div className="results-grid">
