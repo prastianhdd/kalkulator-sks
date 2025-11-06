@@ -1,0 +1,51 @@
+/* src/index.css (Ganti semua isinya) */
+:root {
+  --primary-color: #3498db;
+  --danger-color: #e74c3c;
+  --success-color: #27ae60;
+  /* --light-gray: #f4f7f6; Ini tidak akan digunakan untuk body background */
+  --dark-text: #2c3e50;
+  --border-color: #ddd;
+  --card-bg: #ffffff; /* Card background sekarang akan putih lagi */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* background-color: #ffffff; <-- Ganti ini */
+
+  /* === PERUBAHAN UNTUK BACKGROUND BODY === */
+  background-image: url('/background.png'); /* Ganti dengan nama file Anda */
+  background-size: cover; /* Pastikan gambar menutupi seluruh viewport */
+  background-position: center center; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Jangan ulang gambar */
+  background-attachment: fixed; /* Penting untuk gambar fullscreen yang tidak scroll */
+  /* === AKHIR PERUBAHAN === */
+  
+  color: var(--dark-text);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* --- OPSIONAL: OVERLAY UNTUK BACKGROUND BODY ---
+  Jika gambar latar belakang Anda terlalu ramai atau gelap,
+  Anda bisa menambahkan overlay ke body. Ini akan menimpa
+  sebagian warna background kartu (App.css), jadi sesuaikan.
+*/
+/*
+body::before {
+  content: '';
+  position: fixed; // Gunakan fixed agar tetap di tempat saat scroll
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4); // Overlay putih 40% transparan
+  z-index: -1; // Pastikan di belakang konten App
+}
+*/
