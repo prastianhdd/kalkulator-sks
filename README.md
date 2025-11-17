@@ -1,16 +1,35 @@
-# React + Vite
+# Kalkulator SKS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi web ini adalah kalkulator IPK dan SKS interaktif yang membantu pengguna menghitung IP semester, IPK kumulatif total, dan menentukan batas maksimum SKS untuk semester berikutnya.
 
-Currently, two official plugins are available:
+## Fitur
+- Kalkulasi IP Semester dan IPK Kumulatif secara otomatis.
+- Penentuan batas maksimum SKS untuk semester berikutnya berdasarkan IP Semester yang dicapai.
+- Manajemen daftar mata kuliah yang dinamis dengan kemampuan menambah, menghapus, dan mengedit data mata kuliah (nama, SKS, nilai).
+- Penyimpanan data otomatis (IPK dan SKS sebelumnya, daftar mata kuliah) ke penyimpanan lokal browser.
+- Antarmuka pengguna yang interaktif dan responsif dengan animasi elemen yang mulus.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalasi
+```bash
+# 1. Clone repositori
+git clone https://github.com/prastianhdd/kalkulator-sks.git
 
-## React Compiler
+# 2. Masuk ke direktori
+cd kalkulator-sks
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 3. Install dependencies
+npm install
+```
 
-## Expanding the ESLint configuration
+## Penggunaan
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Teknologi yang di gunakan
+- **Bahasa Utama:** JavaScript
+
+---
+<p align="center">
+  <i>✨ Dibuat secara otomatis oleh README.md Generator ✨</i>
+</p>
